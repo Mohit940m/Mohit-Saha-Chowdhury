@@ -58,11 +58,11 @@ export const PROJECTS = [
     link: "https://github.com/Mohit940m/Full-Stack-contact-list-using-Flask" 
   },
   {
-    title: "Weather App",
+    title: "Weather AI App",
     image: project3,
     description:
-      "Built a responsive weather application with a mobile-compatible UI, providing real-time weather data using the OpenWeather API.",
-    technologies: ["React.js", "Tailwind CSS", "OpenWeather API"],
+      "Built a responsive weather application with a mobile-compatible UI, providing real-time weather data using the OpenWeather API and Gemini AI for enhanced user experience. The app features a clean design with Tailwind CSS and is fully functional on both desktop and mobile devices.",
+    technologies: ["React.js", "Tailwind CSS", "OpenWeather API", "Gemini AI"],
     link: "https://weather-app-react-chi-ten.vercel.app/" 
   },
   {
