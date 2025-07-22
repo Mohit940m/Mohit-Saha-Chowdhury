@@ -1,8 +1,10 @@
 import project1 from "../assets/projects/task_manager_03.jpg";
 import project2 from "../assets/projects/contact_list_01.jpg";
-import project3 from "../assets/projects/weather app.jpg"; 
+import project3 from "../assets/projects/weather app.jpg";
 import project4 from "../assets/projects/portfolio.jpg";
 import project5 from "../assets/projects/Contact_manage_01_compress.jpg";
+import project6 from "../assets/projects/Recipy_App_02.jpg";
+import project7 from "../assets/projects/Todo_app.jpg";
 
 export const HERO_CONTENT = `I am a passionate full-stack developer with expertise in building dynamic and responsive web applications. My experience includes working with front-end technologies like React.js and Next.js, as well as back-end frameworks like Django and Flask. With a background in Mechanical Engineering, I bring an analytical mindset and problem-solving skills to software development, focusing on delivering high-quality, scalable solutions.`;
 
@@ -34,6 +36,22 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Real-Time Collaborative Kanban App",
+    image: project7, // replace with your actual image import
+    description:
+      "Built a full-stack real-time Kanban-style ToDo application with multi-board support, role-based access, and live task updates using Socket.IO. Features include JWT authentication, activity logs, task drag-and-drop (mobile and desktop), and board invitations by email. Developed using React.js, Node.js, Express.js, MongoDB, and Socket.IO with a responsive UI using Material UI and conditional rendering. Frontend hosted on Netlify, backend on Render with CORS and environment-based configuration.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO"],
+    link: "https://todo-kanban-style.netlify.app/"
+  },
+  {
+    title: " AI-Powered Recipe Application ",
+    image: project6,
+    description:
+      "Developed a full-stack Recipe To-Do web application integrating Gemini AI API for intelligent recipe suggestions based on user ingredients. Built using React.js, Node.js, Express.js, and MongoDB with JWT authentication and secure routing. Users can add ingredients, receive recipe ideas, and manage cooking tasks in a responsive tailwindcss. Deployed both frontend and backend on Render with environment-based configurations and proper error handling.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini AI API"],
+    link: "https://recipe-app-i61u.vercel.app/" // project link
+  },
+  {
     title: " Contact Management Web Application ",
     image: project5,
     description:
@@ -46,7 +64,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "Built a Task Management Web Application using Django as the backend and Bootstrap for a responsive frontend. Features task creation, editing, deletion, and photo upload.",
-    technologies: [ "Bootstrap", "Django", ],
+    technologies: ["Bootstrap", "Django",],
     link: "https://www.linkedin.com/posts/mohit-saha-chowdhury_django-bootstrap-taskmanagement-activity-7243611744269434880-n_7_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACBTBocBoLyjm1RdLF5DrIDgVuY7RowR0sw" // <-- Add actual project link here
   },
   {
@@ -55,7 +73,7 @@ export const PROJECTS = [
     description:
       "Developed a contact list application using Flask for the backend and a clean, minimalist frontend interface.",
     technologies: ["Flask", "HTML", "CSS"],
-    link: "https://github.com/Mohit940m/Full-Stack-contact-list-using-Flask" 
+    link: "https://github.com/Mohit940m/Full-Stack-contact-list-using-Flask"
   },
   {
     title: "Weather AI App",
@@ -63,7 +81,7 @@ export const PROJECTS = [
     description:
       "Built a responsive weather application with a mobile-compatible UI, providing real-time weather data using the OpenWeather API and Gemini AI for enhanced user experience. The app features a clean design with Tailwind CSS and is fully functional on both desktop and mobile devices.",
     technologies: ["React.js", "Tailwind CSS", "OpenWeather API", "Gemini AI"],
-    link: "https://weather-app-react-chi-ten.vercel.app/" 
+    link: "https://weather-app-react-chi-ten.vercel.app/"
   },
   {
     title: "Portfolio Website",
@@ -78,7 +96,7 @@ export const PROJECTS = [
 export const CONTACT = {
   address: "Kolkata",
   email: "sahachowdhurymohit@gmail.com",
-  linkedin: "www.linkedin.com/in/mohit-sahachowdhury", 
-  github: "github.com/Mohit940m", 
+  linkedin: "www.linkedin.com/in/mohit-sahachowdhury",
+  github: "github.com/Mohit940m",
 };
 
