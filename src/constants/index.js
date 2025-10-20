@@ -13,10 +13,15 @@ export const ABOUT_TEXT = `I am a dedicated software developer transitioning fro
 export const EXPERIENCES = [
   {
     year: "April 2025 - Present",
-    role: " Software Development Intern (Remote)",
+    role: " Frontend Developer Intern → Node.js Developer Intern (Remote)",
     company: "Talentrise Technokrate Pvt. Ltd.",
-    description: `Collaborating on a high-performance React + Vite game application, focusing on interactivity and animation.Participated in regular stand-ups, version control via Git, and debugging complex UI bugs.`,
-    technologies: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    description: ` Started as a Frontend Intern (Apr–Jun 2025), enhancing UI components and integrating APIs before transi
+tioning to backend development.
+ • Developed and optimized backend services using Node.js and Express, implementing secure single-device login,
+ JWTauthentication, and integrating Auth0 and Brave in separate projects; also built real-time communication
+ features with Socket.io.
+ • Assisted the DevOps team in deploying and managing applications using AWS EC2, Docker, and NGINX.`,
+    technologies: ["Node.js", "Express.js", "React.js", "MongoDB", "Socket.io", "AWS EC2", "Docker", "NGINX", "Auth0", "Brave"],
   },
   {
     year: "January 2023 - September 2023",
