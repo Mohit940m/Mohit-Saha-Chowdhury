@@ -70,19 +70,13 @@ const Form = () => {
     phone: "",
     query: "",
     description: "",
-    file: null,
   });
 
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e) => {
-    setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const validateForm = () => {
@@ -95,10 +89,6 @@ const Form = () => {
       newErrors.email = "Email address is invalid.";
     }
     if (!formData.query) newErrors.query = "Your query is required.";
-
-    if (formData.file && formData.file.size > 5 * 1024 * 1024) { // 5 MB
-      newErrors.file = "File size must be under 5 MB.";
-    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -116,70 +106,52 @@ const Form = () => {
     // You will need to replace 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL'
     // with the actual URL from your deployed script.
     const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-    const form = new FormData();
 
-    // Append form fields
-    for (const key in formData) {
-        if (key !== 'file') {
-            form.append(key, formData[key]);
-        }
-    }
+    // Build a plain object payload that we'll POST as JSON.
+    const payload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      query: formData.query,
+      description: formData.description,
+      timestamp: new Date().toISOString(),
+    };
 
-    // Handle file upload. Google Apps Script needs special handling for files.
-    // A common way is to convert the file to a base64 string.
-    if (formData.file) {
-        const reader = new FileReader();
-        reader.readAsDataURL(formData.file);
-        reader.onload = () => {
-            const fileData = reader.result.split('base64,')[1];
-            form.append('fileData', fileData);
-            form.append('fileName', formData.file.name);
-            form.append('fileType', formData.file.type);
-            sendData(scriptURL, form);
-        };
-        reader.onerror = (error) => {
-            console.error('Error reading file:', error);
-            setStatus("error");
-        };
-    } else {
-        sendData(scriptURL, form);
-    }
+    sendData(scriptURL, payload);
   };
 
-  const sendData = async (url, data) => {
-  try {
-    if (!url) {
-      console.error("Google Script URL is not defined. Please check your .env file.");
-      setStatus("error");
-      return;
-    }
+  const sendData = async (url, payload) => {
+    try {
+      if (!url) {
+        console.error("Google Script URL is not defined. Please set `VITE_GOOGLE_SCRIPT_URL` in your environment.");
+        setStatus("error");
+        return;
+      }
 
-    const response = await fetch(url, {
-      method: 'POST',
-      body: data,
-    });
+      await fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    // Check if response is ok before trying to parse JSON
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const result = await response.json();
-    console.log('Server response:', result);
-    
-    if (result.result === "success") {
+      // With 'no-cors', we can't read the response. We assume success if fetch doesn't throw an error.
+      // The request is sent, and we proceed as if it was successful.
       setStatus("success");
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", query: "", description: "", file: null });
-      document.getElementById('contact-form').reset();
-    } else {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        query: "",
+        description: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
       setStatus("error");
-      console.error("Server error:", result.message);
     }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    setStatus("error");
-  }
-};
+  };
 
 
   return (
@@ -218,12 +190,6 @@ const Form = () => {
             </div>
             <div className="sm:col-span-2">
               <FormTextarea id="description" label="More Description" value={formData.description} onChange={handleInputChange} error={errors.description} />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="file" className="block text-sm font-medium text-neutral-300">Attach File (Image or PDF)</label>
-              <input type="file" id="file" name="file" onChange={handleFileChange} accept="image/*,.pdf" className="mt-1 block w-full text-sm text-neutral-400 file:mr-4 file:rounded-md file:border-0 file:bg-neutral-700 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-neutral-600"/>
-              <p className="mt-1 text-xs text-neutral-500">Max file size: 5 MB.</p>
-              {errors.file && <p className="mt-1 text-xs text-red-500">{errors.file}</p>}
             </div>
           </div>
           <div className="mt-8 text-center">
