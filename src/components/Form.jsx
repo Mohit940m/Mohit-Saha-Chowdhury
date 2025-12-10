@@ -170,7 +170,7 @@ const Form = () => {
         transition={{ duration: 0.8 }}
         className="mx-auto mb-12 max-w-3xl text-center text-lg text-neutral-400"
       >
-        For over a decade, I've been solving diverse technical challenges for clients, including corporate projects. Feel free to share your project details or questions with me here. I'm happy to help.
+        I've been solving diverse technical challenges for clients, including corporate projects. Feel free to share your project details or questions with me here. I'm happy to help.
       </motion.p>
 
       <motion.div
