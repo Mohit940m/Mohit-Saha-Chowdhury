@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiReactjsLine } from 'react-icons/ri'
 import { TbBrandNextjs, TbBrandFramerMotion } from 'react-icons/tb'
-import { SiMongodb, SiTailwindcss, SiFlask, SiDjango, SiTypescript, SiPython, SiJavascript, SiGit, SiGithub, SiVuedotjs, SiFastapi, SiNginx, SiDocker, SiPostman } from 'react-icons/si'
+import { SiMongodb, SiTailwindcss, SiFlask, SiDjango, SiTypescript, SiPython, SiJavascript, SiGit, SiGithub, SiVuedotjs, SiFastapi, SiNginx, SiDocker, SiPostman, SiExpress, SiSocketdotio, SiLangchain, SiSupabase, SiRedis, SiTerraform } from 'react-icons/si'
 import { FaNodeJs, FaAws } from 'react-icons/fa'
 import { BiLogoPostgresql } from 'react-icons/bi'
 import { animate, motion } from 'framer-motion'
@@ -107,8 +107,8 @@ const Technologies = () => {
       transition={{duration: 2}}
       className="mb-10">
         <h3 className="text-2xl mb-6 text-center">Backend</h3>
-        <div className="flex justify-center gap-8">
-          <motion.div 
+        <div className="flex justify-center gap-8 flex-wrap">
+          <motion.div
           variants={iconVariants(2)}
           initial="initial"
           animate="animate"
@@ -116,7 +116,15 @@ const Technologies = () => {
               <FaNodeJs className="text-7xl text-green-500" />
               <p className="mt-2 text-center">Node.js</p>
           </motion.div>
-          <motion.div 
+          <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiExpress className="text-7xl" />
+              <p className="mt-2 text-center">Express</p>
+          </motion.div>
+          <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
@@ -140,6 +148,22 @@ const Technologies = () => {
               <SiFastapi className="text-7xl text-cyan-500" />
               <p className="mt-2 text-center">FastAPI</p>
           </motion.div>
+          <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiSocketdotio className="text-7xl" />
+              <p className="mt-2 text-center">Socket.io</p>
+          </motion.div>
+          <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiLangchain className="text-7xl text-emerald-400" />
+              <p className="mt-2 text-center">LangChain</p>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -150,8 +174,8 @@ const Technologies = () => {
       transition={{duration: 2}}
       className="mb-10">
         <h3 className="text-2xl mb-6 text-center">Database</h3>
-        <motion.div className="flex justify-center gap-8">
-          <motion.div 
+        <motion.div className="flex justify-center gap-8 flex-wrap">
+          <motion.div
           variants={iconVariants(2)}
           initial="initial"
           animate="animate"
@@ -159,13 +183,29 @@ const Technologies = () => {
               <SiMongodb className="text-7xl text-green-500" />
               <p className="mt-2 text-center">MongoDB</p>
           </motion.div>
-          <motion.div 
+          <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4">
               <BiLogoPostgresql className="text-7xl text-sky-700" />
               <p className="mt-2 text-center">PostgreSQL</p>
+          </motion.div>
+          <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiSupabase className="text-7xl text-emerald-500" />
+              <p className="mt-2 text-center">Supabase</p>
+          </motion.div>
+          <motion.div
+          variants={iconVariants(2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiRedis className="text-7xl text-red-500" />
+              <p className="mt-2 text-center">Redis</p>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -176,9 +216,7 @@ const Technologies = () => {
       initial= {{opacity: 0, x : -100}}
       transition={{duration: 2}}>
         <h3 className="text-2xl mb-6 text-center">Tools</h3>
-        <div 
-        
-        className="flex justify-center gap-8">
+        <div className="flex justify-center gap-8 flex-wrap">
           <motion.div 
           variants={iconVariants(2)}
           initial="initial"
@@ -226,6 +264,14 @@ const Technologies = () => {
           className="rounded-2xl border-4 border-neutral-800 p-4">
               <SiPostman className="text-7xl text-orange-500" />
               <p className="mt-2 text-center">Postman</p>
+          </motion.div>
+          <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4">
+              <SiTerraform className="text-7xl text-purple-500" />
+              <p className="mt-2 text-center">Terraform</p>
           </motion.div>
         </div>
       </motion.div>

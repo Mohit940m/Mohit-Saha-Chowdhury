@@ -12,16 +12,37 @@ export const ABOUT_TEXT = `I am a dedicated software developer transitioning fro
 
 export const EXPERIENCES = [
   {
-    year: "April 2025 - Present",
-    role: " Frontend Developer Intern → Node.js Developer Intern (Remote)",
+    year: "February 2026 - Present",
+    role: "Software Development Intern (Remote)",
+    company: "CuraCloud Technology Solutions Pvt. Ltd.",
+    description: `Building backend services for a multi-tenant healthcare SaaS platform, primarily in FastAPI (Python) alongside Node.js/Express, delivering secure REST APIs for clinic management, doctor onboarding, appointment scheduling, inventory, and stock workflows.
+ • Developing an agentic AI system with LangChain and LangGraph that runs healthcare workflows through natural language conversation — interpreting user intent, orchestrating multi-step flows, invoking backend tools and APIs, and collecting structured input via dynamic forms.
+ • Provisioning and managing AWS infrastructure with Terraform (IaC) — ECS, ECR, ALB, CloudFront, VPC, and Redis — containerised with Docker behind NGINX.
+ • Owning the data and access layer on Supabase (PostgreSQL): schema design, SQL query optimisation, and data modelling, with Supabase Auth, role-based access control (RBAC), secure file storage, and backend validation.
+ • Contributing to backend refactoring, API optimisation, and performance improvements, collaborating with frontend developers through Git workflows, code reviews, and Agile sprints.`,
+    technologies: ["FastAPI", "Python", "Node.js", "Express.js", "LangChain", "LangGraph", "Supabase", "PostgreSQL", "AWS ECS", "Terraform", "Docker", "Redis", "NGINX", "RBAC"],
+  },
+  {
+    year: "July 2025 - February 2026",
+    role: "Node.js Developer Intern (Remote)",
     company: "Talentrise Technokrate Pvt. Ltd.",
-    description: ` Started as a Frontend Intern (Apr–Jun 2025), enhancing UI components and integrating APIs before transi
-tioning to backend development.
- • Developed and optimized backend services using Node.js and Express, implementing secure single-device login,
- JWTauthentication, and integrating Auth0 and Brave in separate projects; also built real-time communication
- features with Socket.io.
- • Assisted the DevOps team in deploying and managing applications using AWS EC2, Docker, and NGINX.`,
-    technologies: ["Node.js", "Express.js", "React.js", "MongoDB", "Socket.io", "AWS EC2", "Docker", "NGINX", "Auth0", "Brave"],
+    description: `Contributed to backend development of a SaaS-based CRM and eCommerce platform, designing scalable RESTful APIs and implementing business logic for dynamic client requirements.
+ • Built and maintained backend services with Node.js and Express.js, managed cloud databases on MongoDB Atlas, and used Postman for API testing and debugging.
+ • Implemented payment gateway integrations with secure webhook handling, plus push notification systems for real-time order shipment, delivery status, and promotional updates.
+ • Implemented secure single-device login and JWT authentication, integrated Auth0, and built real-time communication features with Socket.io.
+ • Communicated directly with clients to translate requirements into technical solutions, and assisted the DevOps team with AWS EC2, Docker, and NGINX deployments.`,
+    technologies: ["Node.js", "Express.js", "MongoDB Atlas", "JWT", "Auth0", "Socket.io", "Payment Gateway", "Webhooks", "Postman", "AWS EC2", "Docker", "NGINX"],
+  },
+  {
+    year: "April 2025 - July 2025",
+    role: "ReactJS Developer Intern (Remote)",
+    company: "Talentrise Technokrate Pvt. Ltd.",
+    description: `Improved frontend functionality and performance across multiple web applications.
+ • Built a React-based gaming application with interactive UI components and client-side state management for a smooth user experience.
+ • Contributed to a CRM platform UI — optimizing layouts, enhancing responsiveness, and adding reusable UI components and features.
+ • Improved application performance by optimizing API calls with debouncing, reducing unnecessary database requests.
+ • Collaborated with backend developers to integrate REST APIs and ensure seamless frontend–backend communication.`,
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "REST APIs", "Redux", "Git", "GitHub"],
   },
   {
     year: "January 2023 - September 2023",
